@@ -5,6 +5,7 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'musicLoader.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
+    #url(r'^$','musicLoader.views.home'),
+    url(r'^$','musicLoader.views.queSong'),
     url(r'^admin/', include(admin.site.urls)),
 ]
