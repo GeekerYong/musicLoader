@@ -1,0 +1,36 @@
+{% include "header.html" %}
+  <title>{{ Title }}</title>
+{% include "navbar.html" %}
+<div class="container" style="
+    margin:0 auto;
+    border: 1px solid #999999;  " >
+  <div class="row" style="margin:auto;margin-left: auto/*CSS才是水平居中全靠他了*/">
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <a href="{{AlbumPic}}" target="_blank"><img src="{{AlbumPic}}" height="180" width="180" class="img-responsive" alt="Responsive image" style="float: left;"></a>
+          <div style="margin-left: 195px;margin-top: -20px;">
+            <h2>{{Name}}</h2>
+            <p>{{Artists}}</p>
+            <a title="专辑《{{Album}}》"><p class="text-primary">{{Album}}</p></a>
+            <a class="btn btn-success btn-sm" role="button" href="{{Url}}" download="{{Url}}">下载音乐</a>
+            <a class="btn btn-primary btn-sm" role="button" onclick="copy('{{Url}}');">复制链接</a>
+          </div>
+          <div style="margin-top: 100px;">
+            <audio src="{{Url}}" type="audio/mp3" controls="controls" width="100%"></audio>
+            <script>
+              $('audio,video').mediaelementplayer();
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  function copy(url){
+    prompt('您的浏览器不支持复制，请 Ctrl+C 复制', url);
+  }
+</script>
+</body>
+</html>
